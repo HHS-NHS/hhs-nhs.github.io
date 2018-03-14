@@ -10,34 +10,45 @@
 </style>
 
 <style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 8px;
-}
-textarea {
-    font-family: inherit;
-    font-size: 18;
-}
-input {
-    font-family: inherit;
-    font-size: 18;
-}
-body {
-    font-family: inherit;
-    font-size: 18;
-}
-table {
-    font-family: inherit;
-    font-size: 18;
-}
+    @media screen {
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        textarea {
+            font-family: inherit;
+            font-size: 18;
+        }
+        input {
+            font-family: inherit;
+            font-size: 18;
+        }
+        body {
+            font-family: inherit;
+            font-size: 18;
+        }
+        table {
+            font-family: inherit;
+            font-size: 18;
+        }
+    }
 </style>
 <style>
 <style type="text/css" media="print">
-    @page 
-    {
-        size: auto;
-        margin: 0mm;
+    @media print {
+        @page 
+        {
+            size: auto;
+            margin: 0mm;
+        }
+        .no-print{
+            display: none ;
+        }
+
+        textarea {
+            resize: none;
+        }
     }
 </style>
 </style>
@@ -49,7 +60,7 @@ table {
 <br>
 </p>
 <p><b>
-THIS FORM MUST BE RETURNED BY 3 PM ON OCTOBER 1 (OR APRIL 1 FOR SPRING EVALUATION) TO THE NHS ADVISOR.  (IF OCTOBER 1 OR APRIL 1 FALL ON A NON-SCHOOL DAY, THE FORMS WILL BE DUE ON THE SCHOOL DAY IMMEDIATELY PRECEDING OCTOBER 1 OR APRIL 1.) NO LATE FORMS WILL BE ACCEPTED AND NO ADDITIONAL DOCUMENTATION WILL BE CONSIDERED ONCE THIS FORM IS TURNED IN!</b></p>
+THIS FORM MUST BE RETURNED BY 3 PM ON OCTOBER 1 (FALL) OR THE FIRST WEDNESDAY AFTER SPRING BREAK (SPRING) TO THE NHS ADVISOR. (IF OCTOBER 1 FALLS ON A NON-SCHOOL DAY, THE FORMS WILL BE DUE ON THE SCHOOL DAY IMMEDIATELY PRECEDING OCTOBER 1) NO LATE FORMS WILL BE ACCEPTED AND NO ADDITIONAL DOCUMENTATION WILL BE CONSIDERED ONCE THIS FORM IS TURNED IN!</b></p>
 
 Name: <input type="text" name="firstname">
 <br><br>
@@ -62,7 +73,7 @@ Grade: <select>
 </select>
 <br>
 <br>
-<table style="width:100%">
+<table style="page-break-after: always;width:100%">
   <tr>
     <td>PRESENT CLASS SCHEDULE</td>
     <td>CURRENT QUARTER GRADE</td>
@@ -202,12 +213,13 @@ List any special recognitions, awards, or honors that you have received during h
 <br><br>
 <textarea rows="5" cols="80" name="special_rec"></textarea>
 <br>
+<p style="page-break-after: always;"> </p>
 <h2>III: SERVICE</h2>
 <p>A commitment to service is essential for an NHS member.  Service is defined as a positive non-self-serving contribution to the welfare of others. Activities for which a student received a grade or credit in class, receives monetary or other remuneration, is a part of a fundraising activity designed to directly benefit the student, or is a part of a student's ASB position requirements will not be considered service. [See additional information on service at the HHS NHS website.]</p>
 <br>
 <b>DESCRIBE</b> any service projects that you have done while in high school. List the most recent first, etc.  <u>There must be at least three (3) different projects involving a total of at least fifteen (15) hours of service within the past two years.</u> At least one (1) project of five hours must be done directly through Hanford High School or as a part of a club or organization at HHS. Please list all of the relevant service projects that you have done since you began 9th grade, even though you may exceed the 15 hour requirement.
 <br>
-<table style="width:100%">
+<table style="page-break-after: always;width:100%">
   <tr>
     <td>Describe Project. Tell why this is service.</td>
     <td>9</td>
@@ -349,7 +361,7 @@ Write a brief self-assessment of your character. Include your strengths and your
 <br><br>
 <textarea cols="80" rows="10" name="character"></textarea>
 <br><br>
-<button type="button" onclick="window.print()">Print</button>
+<button class="no-print" type="button" onclick="window.print()">Print</button>
 </form>
 <script type="text/javascript">
 $('#main').sisyphus( {timeout: 0 } );
